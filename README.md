@@ -1,40 +1,32 @@
 
----
+### ** Text Analyzer & Statistics Generator**
 
-# Text Analyzer & Statistics Generator
+This tool is a Python-based text mining script designed to analyze text files and generate detailed statistics. It calculates word counts, sentence counts, character metrics, and word frequency distributions, making it ideal for basic linguistic analysis or academic projects.
 
-Bu Python aracı, verilen bir metin dosyasını analiz ederek kelime sayısı, cümle sayısı, karakter istatistikleri ve kelime frekansları gibi detaylı metin madenciliği verileri oluşturur. Akademik ödevler veya temel metin analizi projeleri için uygun, modüler bir yapıya sahiptir.
+#### **Features**
+* **Comprehensive Stats:** Tracks total words, sentences, and character counts.
+* **Text Cleaning:** Automatically strips punctuation and normalizes text to lowercase for accurate analysis.
+* **Sentence Detection:** Corrected logic to identify sentence endings, including support for ellipses (`...`), question marks, and exclamation points.
+* **Word Metrics:**
+    * Finds the shortest and longest words along with their occurrence percentage.
+    * Calculates the average word-to-sentence ratio.
+    * Generates a full frequency distribution sorted by usage.
+* **Formatted Output:** Writes all results to a neatly aligned `.txt` file.
 
-## Özellikler
-
-* **Detaylı İstatistikler:** Toplam kelime, cümle ve karakter sayılarını hesaplar.
-* **Gelişmiş Temizleme:** Kelimeleri noktalama işaretlerinden arındırır ve küçük harfe çevirerek standartlaştırır.
-* **Cümle Analizi:** Nokta, soru işareti, ünlem ve üç nokta (...) gibi bitiricileri takip ederek doğru cümle sayımı yapar.
-* **Kelime Metrikleri:**
-    * En kısa ve en uzun kelimeleri (ve bunların metin içindeki oranlarını) bulur.
-    * Kelime başına düşen ortalama cümle oranını hesaplar.
-    * Tüm kelimelerin frekans dağılımını azalan sırada listeler.
-* **Dosya Çıktısı:** Sonuçları düzenli ve hizalı bir şekilde `.txt` dosyasına yazar.
-
-## Kullanım
-
-Programı iki argümanla (giriş dosyası ve çıktı dosyası) çalıştırmanız yeterlidir:
-
+#### **Usage**
+Run the script with two arguments: the input file to analyze and the name of the output file:
 ```bash
 python text_analyzer.py input.txt output.txt
 ```
 
-## Teknik Detaylar
+#### **Technical Overview**
+The script is built with a modular approach:
+* `pure_words`: Handles string sanitization and tokenization.
+* `sentence_finder`: Analyzes punctuation patterns to determine sentence structure.
+* `word_frequency`: Uses Python's `lambda` functions to sort and rank word usage.
+* `main`: Orchestrates the entire flow from file reading to the final report generation.
 
-Proje aşağıdaki fonksiyonel bloklardan oluşur:
-* `pure_words`: Metni temizleyerek kelime listesi oluşturur.
-* `sentence_finder`: Noktalama işaretlerine göre cümle yapısını analiz eder.
-* `word_frequency`: Python'ın `lambda` fonksiyonlarını kullanarak kelimeleri kullanım sıklığına göre sıralar.
-* `main`: Tüm analiz süreçlerini birleştirir ve çıktı formatını yönetir.
-
-## Örnek Çıktı Formatı
-
-Analiz sonucu oluşturulan dosya şu yapıda görünür:
+#### **Example Output Format**
 ```text
 Statistics about input.txt:
 #Words                  : 150
@@ -46,5 +38,3 @@ Words and Frequencies   :
 python                  : 0.0450
 analysis                : 0.0210
 ```
-
----
