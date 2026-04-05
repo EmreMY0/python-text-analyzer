@@ -174,13 +174,3 @@ def main():
 if __name__=="__main__":
     main()
 
-"""
- Challenging Parts of this Assignment:
- 1) Creating a list that contains the word and its frequency as a single element of the list.
-    I also implemented this system when i creating the shortest and longest words list.
-  
- 2)Another challenging part was detecting the "..." as a sentence finisher since they could be easily confused with ordinary dot(.)
-   while searching for a sentence finisher punctuation.Therefore, i firstly checked for the "...".
- 
- 3)Removing the last new line at the end of the ":" .I used for and if to solve this problem by deciding if the line is the last line.    
-"""
